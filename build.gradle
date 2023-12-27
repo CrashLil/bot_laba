@@ -1,0 +1,30 @@
+plugins {
+	id 'application'
+	id 'java'
+}
+compileJava.options.encoding = 'UTF-8'
+
+group = 'ru.lab'
+version = '0.0.1-SNAPSHOT'
+
+application {
+	mainClassName = 'ru.lab1.tg.Main'
+}
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation("org.telegram:telegrambots:6.8.0")
+	implementation 'com.google.zxing:core:3.4.1'
+	implementation 'com.google.zxing:javase:3.4.1'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
